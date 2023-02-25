@@ -5,26 +5,19 @@ player_name = ''
 total_count = 150
 
 async def get_game():
-    global game
     return game
 
 async def set_game():
-    global game
-    global player_name
-    global total_count
-    if game == False:
-        game = True
-    else:
-        player_name = ''
-        total_count = 150
-        game = False
+    global game, player_name, total_count
+    game = not game
+    player_name = ''
+    total_count = 150
 
 async def set_player_name(new_name: str):
     global player_name
     player_name = new_name
 
 async def get_player_name():
-    global player_name
     return player_name
 
 async def set_total_count(count: int):
