@@ -23,6 +23,8 @@ async def get_player_name():
 async def set_total_count(count: int):
     global total_count
     total_count-= count
+    if total_count <0:
+        return 0
 
 async def get_total_count():
     return total_count
